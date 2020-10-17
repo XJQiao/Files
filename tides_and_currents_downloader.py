@@ -38,7 +38,7 @@ def get_date_sequence(begin_date: date, end_date: date) -> List[date]:
         dates.append((begin_date, ldm_begin_date))
 
         tmp_date_start = ldm_begin_date + timedelta(days=1)
-        while last_day_of_month(tmp_date_start) < end_date:
+        while last_day_of_month(tmp_date_start) < end_date.date():
             tmp_date_end = last_day_of_month(tmp_date_start)
             #print(f"{tmp_date_start} to {tmp_date_end}")
             dates.append((tmp_date_start, tmp_date_end))
